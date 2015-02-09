@@ -2,6 +2,7 @@ from flask import render_template
 from app import app
 import os
 import json
+import re
 from flask import request
 from whoosh.lang.morph_en import variations
 from flask import jsonify 
@@ -29,6 +30,7 @@ def jsondata():
 				fo = open(path,'rb+')
 		        line = fo.read()
 		        line = line.lower()
+		        line = re.sub('[!@#$".(),\']', '', line)
 		        
 		        freq = []
 		        if vari[k] in line:
