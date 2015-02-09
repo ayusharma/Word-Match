@@ -28,6 +28,7 @@ def jsondata():
 				path = '/var/www/html/filesearch/file_storage/%s' %(file)
 				fo = open(path,'rb+')
 		        line = fo.read()
+		        line = line.lower()
 		        
 		        freq = []
 		        if vari[k] in line:

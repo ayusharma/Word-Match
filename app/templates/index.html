@@ -2,12 +2,37 @@
 <html>
 <head>
 		<title>{{ title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 </head>
 <body>
+	
+		<!-- <input type="text" placeholder="Enter your word here" name="text">
+		<input type="submit" name="my-form"> -->
+	<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>Word Matching</h1>
+		</div>
+	</div>
+	<div class="row">
 	<form action="jsondata" method="POST">
-		<input type="text" placeholder="Enter your word here" name="text">
-		<input type="submit" name="my-form">
-	</form>
-	JSON Data for the D3JS Tree <br><br> {{ json }}
+	  <div class="col-lg-6 col-lg-offset-3">
+	    <div class="input-group">
+	      <input type="text" class="form-control" placeholder="Enter Word Here.." name="text" style="text-transform:lowercase;">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="submit">Go!</button>
+	      </span>
+	    </div><!-- /input-group -->
+	  </div><!-- /.col-lg-6 -->
+	  </form>
+	</div><!-- /.row -->
+	</div>
+	<!-- JSON Data for the D3JS Tree <br><br> {{ json }} -->
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </html>
