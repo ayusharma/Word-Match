@@ -18,7 +18,11 @@ def my_form():
 @app.route('/jsondata',methods=['GET','POST'])
 def jsondata():
     
-
+	def file_open(path_file):
+		fo = open(path_file,'rb+')
+		linew = fo.read()
+		return linew
+		
 	keyword = request.form['text']
 	vari = list(variations(keyword))
 	# vari = map(int,vari)
@@ -34,9 +38,9 @@ def jsondata():
 
 			if file.endswith(".txt"):
 				# path = '/var/www/html/filesearch/file_storage/%s' %(file)
-				path_file = path+'/'+file
-				fo = open(path_file,'r')
-		        line = fo.read()
+				
+				line =file_open(path_file = path+'/'+file)
+		        # line = fo.read()
 		        line = line.lower()
 		        line = re.sub('[!@#$".(),\']', '', line)
 		        
