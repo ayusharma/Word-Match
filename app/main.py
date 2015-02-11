@@ -1,7 +1,7 @@
 from flask import Flask
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
+# app.config['DEBUG'] = True
 
 from flask import render_template
 # from app import app
@@ -17,8 +17,7 @@ def my_form():
     return render_template("index.html")
 @app.route('/jsondata',methods=['GET','POST'])
 def jsondata():
-    
-
+	line = ' '
 	keyword = request.form['text']
 	vari = list(variations(keyword))
 	vari = map(lambda x:x.lower(),vari)
@@ -31,11 +30,8 @@ def jsondata():
 			
 			if file.endswith(".txt"):
 				path_file = path+'/'+file
-				fo = open(path_file,'r')
-		        line = fo.read()
-		        line = line.lower()
+				line = open(path_file,'r').read().lower()
 		        line = re.sub('[!@#$".(),\']', '', line)
-		        
 		        freq = []
 		        if vari[k] in line:
 
