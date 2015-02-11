@@ -29,9 +29,7 @@ def jsondata():
 		file_list = []
 		for file in os.listdir(path):
 			
-
 			if file.endswith(".txt"):
-				# path = '/var/www/html/filesearch/file_storage/%s' %(file)
 				path_file = path+'/'+file
 				fo = open(path_file,'r')
 		        line = fo.read()
